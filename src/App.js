@@ -1,5 +1,4 @@
 import "./App.css";
-import AWS from "aws-sdk";
 
 function App() {
   return (
