@@ -1,5 +1,6 @@
 import "./App.css";
 import React, { useState } from "react";
+import axios from "axios";
 function App() {
   const [transcript, setTranscript] = useState("");
 
@@ -9,6 +10,12 @@ function App() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(transcript);
+    axios
+      .post("https://aws-polly-backend.herokuapp.com/", {
+        transcript: transcript,
+      })
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
   };
   return (
     <div className="App">
