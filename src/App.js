@@ -19,8 +19,8 @@ function App(props) {
       })
       .then((res) => {
         console.log(res);
-        setS3Url(true);
-        console.log(res.data.data);
+        setS3Url(res.data.Location);
+        console.log(res.data.Location);
       })
 
       .catch((err) => console.log(err));
