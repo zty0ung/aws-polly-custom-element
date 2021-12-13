@@ -6,7 +6,7 @@ function App(props) {
     props.customElement.getElementValue("content", (value) => {
       console.log(value);
     });
-  }, []);
+  });
   const [transcript, setTranscript] = useState("");
   const [s3Url, setS3Url] = useState(props?.data?.s3Url || null);
 
