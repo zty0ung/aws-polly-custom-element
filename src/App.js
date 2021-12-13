@@ -2,6 +2,7 @@ import "./App.css";
 import React, { useState } from "react";
 import axios from "axios";
 function App() {
+  console.log(process.env.NODE_ENV);
   const [transcript, setTranscript] = useState("");
 
   const handleChange = (e) => {
