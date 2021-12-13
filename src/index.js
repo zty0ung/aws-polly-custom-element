@@ -5,7 +5,7 @@ import ReactDOM from "react-dom";
 import "./index.css";
 // import "./custom-element-v2.css";
 import App from "./App";
-if (process.env.REACT_APP_ENVIRONMENT === "production") {
+if (process.env.NODE_ENV === "production") {
   CustomElement.init((element, _context) => {
     const data = element.value ? JSON.parse(element.value) : null;
 
