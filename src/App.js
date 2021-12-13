@@ -19,7 +19,7 @@ function App(props) {
       })
       .then((res) => {
         console.log(res);
-        setS3Url(res.data.data.Location);
+        console.log(res.data.data);
       })
 
       .catch((err) => console.log(err));
