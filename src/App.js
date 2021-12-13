@@ -4,6 +4,7 @@ import axios from "axios";
 function App(props) {
   console.log(props);
   const [transcript, setTranscript] = useState("");
+  const [s3Url, setS3Url] = useState(null);
 
   const handleChange = (e) => {
     setTranscript(e.target.value);
@@ -18,6 +19,7 @@ function App(props) {
       })
       .then((res) => {
         console.log(res);
+        setS3Url(true);
         console.log(res.data.data);
       })
 
