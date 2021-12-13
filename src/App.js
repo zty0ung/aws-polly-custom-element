@@ -9,6 +9,7 @@ function App(props) {
   });
   const [transcript, setTranscript] = useState("");
   const [s3Url, setS3Url] = useState(props?.data?.s3Url || null);
+  const [title, setTitle] = useState;
 
   const handleChange = (e) => {
     setTranscript(e.target.value);
@@ -17,7 +18,7 @@ function App(props) {
     e.preventDefault();
     console.log(transcript);
     axios
-      .post("https://aws-polly-backend.herokuapp.com/", {
+      .post("https://aws-polly-backend.herokuapp.com/azure", {
         transcript: transcript,
         title: transcript.split(" ")[0],
       })
