@@ -1,8 +1,8 @@
 import "./App.css";
 import React, { useState } from "react";
 import axios from "axios";
-function App() {
-  console.log(process.env.NODE_ENV);
+function App({ props }) {
+  console.log(props);
   const [transcript, setTranscript] = useState("");
 
   const handleChange = (e) => {
@@ -14,6 +14,7 @@ function App() {
     axios
       .post("https://aws-polly-backend.herokuapp.com/", {
         transcript: transcript,
+        title: transcript.split(" ")[0],
       })
       .then((res) => console.log(res))
       .catch((err) => console.log(err));

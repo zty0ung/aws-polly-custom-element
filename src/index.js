@@ -15,7 +15,7 @@ if (process.env.NODE_ENV === "production") {
         data={data}
         config={element.config}
         disabled={element.disabled}
-        customElementApi={CustomElement}
+        customElement={CustomElement}
       />,
       document.getElementById("root")
     );
