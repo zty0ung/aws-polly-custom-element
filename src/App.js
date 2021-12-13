@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 function App(props) {
   useEffect(() => {
-    props.customElement.getElementValue("content", (value) => {
+    props.customElement.getElementValue("title", (value) => {
       console.log(value);
     });
   });
