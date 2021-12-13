@@ -4,7 +4,7 @@ import axios from "axios";
 function App(props) {
   console.log(props);
   const [transcript, setTranscript] = useState("");
-  const [s3Url, setS3Url] = useState(null);
+  const [s3Url, setS3Url] = useState(props?.data?.s3Url || null);
 
   const handleChange = (e) => {
     setTranscript(e.target.value);
@@ -21,6 +21,11 @@ function App(props) {
         console.log(res);
         setS3Url(res.data.Location);
         console.log(res.data.Location);
+        props.customElement.setValue(
+          JSON.stringify({
+            s3Url: res.data.Location,
+          })
+        );
       })
 
       .catch((err) => console.log(err));
