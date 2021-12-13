@@ -1,8 +1,12 @@
 import "./App.css";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 function App(props) {
-  console.log(props);
+  useEffect(() => {
+    CustomElement.getElementValue("content", (value) => {
+      console.log(value);
+    });
+  }, []);
   const [transcript, setTranscript] = useState("");
   const [s3Url, setS3Url] = useState(props?.data?.s3Url || null);
 
