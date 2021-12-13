@@ -4,6 +4,7 @@ import axios from "axios";
 function App(props) {
   console.log(props);
   const [transcript, setTranscript] = useState("");
+  const [s3Url, setS3Url] = useState("");
 
   const handleChange = (e) => {
     setTranscript(e.target.value);
@@ -16,12 +17,17 @@ function App(props) {
         transcript: transcript,
         title: transcript.split(" ")[0],
       })
-      .then((res) => console.log(res))
+      .then((res) => {
+        console.log(res);
+        setS3Url(res.data.data.Location);
+      })
+
       .catch((err) => console.log(err));
   };
   return (
     <div className="App">
       <h1>AWS POLLY</h1>
+      <h2>URL: {s3Url}</h2>
       <form onSubmit={handleSubmit}>
         <label>
           Transcript:
