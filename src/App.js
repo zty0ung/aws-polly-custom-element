@@ -41,26 +41,29 @@ function App(props) {
   };
   return (
     <div className="App">
-      <p class="u-spacing-l action-large" style={{ display: "inline-block" }}>
+      <p
+        className="u-spacing-l action-large"
+        style={{ display: "inline-block" }}
+      >
         URL:{" "}
       </p>
       <div
-        class="content-item-element__content"
+        className="content-item-element__content"
         style={{ display: "inline-block" }}
       >
         {s3Url}
       </div>
 
       {s3Url && (
-        <>
-          <p class="u-spacing-l action-large">Preview</p>{" "}
+        <div className="preview">
+          <p className="u-spacing-l action-large">Preview</p>{" "}
           <audio controls src={s3Url}></audio>
-        </>
+        </div>
       )}
       <form onSubmit={handleSubmit}>
-        <p class="u-spacing-l action-large">Transcript</p>
+        <p className="u-spacing-l action-large">Transcript</p>
         <textarea type="text" value={transcript} onChange={handleChange} />
-        <input class="btn btn--tertiary" type="submit" value="Convert" />
+        <input className="btn btn--tertiary" type="submit" value="Convert" />
       </form>
     </div>
   );
