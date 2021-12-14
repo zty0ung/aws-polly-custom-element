@@ -10,8 +10,18 @@ textarea {
   height: 275px;
   border: 1px solid #dde0e4;
 }
+.url {
+  padding: 10px 0;
+  box-shadow: 0 0 8px 0 rgb(0 0 0 / 3%), 0 8px 32px 0 rgb(16 33 60 / 24%);
+}
 .preview {
+  padding: 10px 0;
   margin: 2rem 0;
+  box-shadow: 0 0 8px 0 rgb(0 0 0 / 3%), 0 8px 32px 0 rgb(16 33 60 / 24%);
+}
+form {
+  padding: 10px 0;
+  box-shadow: 0 0 8px 0 rgb(0 0 0 / 3%), 0 8px 32px 0 rgb(16 33 60 / 24%);
 }
 audio {
   width: 100%;

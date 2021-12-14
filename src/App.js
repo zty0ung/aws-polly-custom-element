@@ -45,19 +45,10 @@ function App(props) {
   };
   return (
     <div className="App">
-      <p
-        className="u-spacing-l action-large"
-        style={{ display: "inline-block" }}
-      >
-        URL:{" "}
-      </p>
-      <div
-        className="content-item-element__content"
-        style={{ display: "inline-block" }}
-      >
-        {s3Url}
+      <div className="url">
+        <p className="u-spacing-l action-large">URL</p>
+        <div className="content-item-element__content">{s3Url}</div>
       </div>
-
       {s3Url && (
         <div className="preview">
           <p className="u-spacing-l action-large">Preview</p>{" "}
