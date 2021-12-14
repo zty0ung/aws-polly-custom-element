@@ -57,7 +57,12 @@ function App(props) {
 
       <form onSubmit={handleSubmit}>
         <p className="u-spacing-l action-large">Transcript</p>
-        <textarea type="text" value={transcript} onChange={handleChange} />
+        <textarea
+          type="text"
+          value={transcript}
+          onChange={handleChange}
+          disabled={props?.disabled ? props.disabled : false}
+        />
         <input
           className="btn btn--primary"
           disabled={transcript.length > 0 ? false : true}
