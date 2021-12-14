@@ -23,7 +23,7 @@ function App(props) {
     axios
       .post("https://aws-polly-backend.herokuapp.com/azure", {
         transcript: transcript,
-        title: title,
+        title: `${title}-${Date.now()}`,
       })
       .then((res) => {
         console.log(res);
