@@ -51,7 +51,12 @@ function App(props) {
         {s3Url}
       </div>
 
-      {s3Url && <audio controls src={s3Url}></audio>}
+      {s3Url && (
+        <>
+          <p class="u-spacing-l action-large">Preview</p>{" "}
+          <audio controls src={s3Url}></audio>
+        </>
+      )}
       <form onSubmit={handleSubmit}>
         <p class="u-spacing-l action-large">Transcript</p>
         <textarea type="text" value={transcript} onChange={handleChange} />
