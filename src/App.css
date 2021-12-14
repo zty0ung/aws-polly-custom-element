@@ -14,10 +14,11 @@ textarea {
   border: 1px solid #dde0e4;
   border-radius: 8px;
   padding: 5px;
+  margin-bottom: 10px;
 }
 
 .preview {
-  padding: 1rem 0;
+  padding: 1rem 0 2rem 0;
   /* background-color: rgb(37, 55, 86); */
   /* border-radius: 8px; */
   border-bottom: 1px solid #dde0e4;
@@ -28,8 +29,11 @@ textarea {
 .p-grey {
   color: #bbbbbb;
 }
+p {
+  padding-bottom: 7px;
+}
 .url {
-  padding: 1rem 0;
+  padding: 1rem 0 2rem 0;
   margin: 1rem 0;
   /* background-color: rgb(37, 55, 86); */
   /* border-radius: 8px; */
@@ -41,5 +45,5 @@ audio {
   /* box-shadow: 0 0 8px 0 rgb(0 0 0 / 3%), 0 8px 32px 0 rgb(16 33 60 / 24%); */
 }
 form {
-  padding: 1rem 0;
+  padding: 1rem 0 2rem 0;
 }
