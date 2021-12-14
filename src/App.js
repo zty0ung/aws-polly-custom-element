@@ -46,19 +46,24 @@ function App(props) {
   return (
     <div className="App">
       <div className="preview">
-        <p className="u-spacing-l action-large p-preview">Preview</p>
+        <p className="u-spacing-l action-large p-white">Preview</p>
         <audio controls src={s3Url ? s3Url : null}></audio>
       </div>
 
       <div className="url">
-        <p className="u-spacing-l action-large">URL</p>
-        <div className="content-item-element__content">{s3Url}</div>
+        <p className="u-spacing-l action-large p-white">URL</p>
+        <div className="content-item-element__content p-white">{s3Url}</div>
       </div>
 
       <form onSubmit={handleSubmit}>
         <p className="u-spacing-l action-large">Transcript</p>
         <textarea type="text" value={transcript} onChange={handleChange} />
-        <input className="btn btn--tertiary" type="submit" value="Convert" />
+        <input
+          className="btn btn--primary"
+          disabled={transcript.length > 0 ? false : true}
+          type="submit"
+          value="Convert"
+        />
       </form>
     </div>
   );

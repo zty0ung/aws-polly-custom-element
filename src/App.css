@@ -9,6 +9,8 @@ textarea {
   resize: none;
   height: 275px;
   border: 1px solid #dde0e4;
+  border-radius: 8px;
+  padding: 5px 10px;
 }
 
 .preview {
@@ -17,38 +19,21 @@ textarea {
   background-color: rgb(37, 55, 86);
   border-radius: 8px;
 }
-.p-preview {
+.p-white {
   color: white;
+}
+.url {
+  margin: 2rem 1rem;
+  padding: 10px;
+  background-color: rgb(37, 55, 86);
+  border-radius: 8px;
 }
 audio {
   width: 100%;
   border-radius: 50px;
   box-shadow: 0 0 8px 0 rgb(0 0 0 / 3%), 0 8px 32px 0 rgb(16 33 60 / 24%);
 }
-/* audio::-webkit-media-controls-panel {
-  background: rgb(37, 55, 86);
+form {
+  margin: 2rem 1rem;
+  padding: 10px;
 }
-audio::-webkit-media-controls-play-button {
-  background-color: #fff;
-  border-radius: 50%;
-}
-audio::-webkit-media-controls-mute-button {
-  background-color: #fff;
-  border-radius: 50%;
-}
-audio::-webkit-media-controls-current-time-display,
-audio::-webkit-media-controls-time-remaining-display {
-  color: #fff;
-  text-shadow: none;
-}
-audio::-webkit-media-controls-timeline {
-  border-radius: 25px;
-  margin-left: 10px;
-  margin-right: 10px;
-}
-audio::-webkit-media-controls-volume-slider {
-  background-color: #fff;
-  border-radius: 25px;
-  padding-left: 8px;
-  padding-right: 8px;
-} */
