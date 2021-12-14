@@ -3,7 +3,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 import "./index.css";
-// import "./custom-element-v2.css";
+import "./custom-element-v2.css";
 import App from "./App";
 if (process.env.NODE_ENV === "production") {
   CustomElement.init((element, _context) => {

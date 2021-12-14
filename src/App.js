@@ -37,8 +37,8 @@ function App(props) {
   };
   return (
     <div className="App">
-      <h1>AWS POLLY</h1>
-      <h2>URL: {s3Url}</h2>
+      <label class="content-item-element__label">URL:</label>
+      <div class="content-item-element__content">{s3Url}</div>
       {s3Url && <audio controls src={s3Url}></audio>}
       <form onSubmit={handleSubmit}>
         <label>
