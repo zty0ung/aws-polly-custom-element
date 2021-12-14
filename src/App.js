@@ -2,15 +2,14 @@ import "./App.css";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 function App(props) {
-  useEffect(() => {
-    props.customElement.getElementValue("title", (value) => {
-      console.log(value);
-    });
-  });
   const [transcript, setTranscript] = useState("");
   const [s3Url, setS3Url] = useState(props?.data?.s3Url || null);
   const [title, setTitle] = useState;
-
+  useEffect(() => {
+    props.customElement.getElementValue("title", (value) => {
+      setTitle(value);
+    });
+  });
   const handleChange = (e) => {
     setTranscript(e.target.value);
   };
@@ -20,7 +19,7 @@ function App(props) {
     axios
       .post("https://aws-polly-backend.herokuapp.com/azure", {
         transcript: transcript,
-        title: transcript.split(" ")[0],
+        title: title,
       })
       .then((res) => {
         console.log(res);
@@ -29,6 +28,7 @@ function App(props) {
         props.customElement.setValue(
           JSON.stringify({
             s3Url: res.data.Location,
+            transcript: transcript,
           })
         );
       })
