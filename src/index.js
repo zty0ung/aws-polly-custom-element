@@ -20,7 +20,7 @@ if (process.env.NODE_ENV === "production") {
       document.getElementById("root")
     );
   });
-  CustomElement.setHeight(600);
+  CustomElement.setHeight(650);
 } else {
   ReactDOM.render(
     <React.StrictMode>
