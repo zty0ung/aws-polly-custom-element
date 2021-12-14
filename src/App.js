@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import "./custom-element-v2.css";
 import axios from "axios";
 function App(props) {
-  const [transcript, setTranscript] = useState("");
+  const [transcript, setTranscript] = useState(props?.data?.transcript || "");
   const [s3Url, setS3Url] = useState(
     props?.data?.s3Url ||
       "https://kochnewsaudio.s3.amazonaws.com/Why%20clemency%20reform%20is%20next%20for%20criminal%20justice-1639507449675.mp3"
