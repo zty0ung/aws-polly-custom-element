@@ -1,6 +1,9 @@
 * {
   color: #525252;
 }
+.App {
+  max-width: 936px;
+}
 input {
   display: block;
 }
@@ -14,26 +17,29 @@ textarea {
 }
 
 .preview {
-  margin: 1rem;
-  padding: 10px;
-  background-color: rgb(37, 55, 86);
-  border-radius: 8px;
+  padding: 1rem 0;
+  /* background-color: rgb(37, 55, 86); */
+  /* border-radius: 8px; */
+  border-bottom: 1px solid #dde0e4;
 }
 .p-white {
-  color: white;
+  /* color: white; */
+}
+.p-grey {
+  color: #bbbbbb;
 }
 .url {
-  margin: 1rem;
-  padding: 10px;
-  background-color: rgb(37, 55, 86);
-  border-radius: 8px;
+  padding: 1rem 0;
+  margin: 1rem 0;
+  /* background-color: rgb(37, 55, 86); */
+  /* border-radius: 8px; */
+  border-bottom: 1px solid #dde0e4;
 }
 audio {
   width: 100%;
   border-radius: 50px;
-  box-shadow: 0 0 8px 0 rgb(0 0 0 / 3%), 0 8px 32px 0 rgb(16 33 60 / 24%);
+  /* box-shadow: 0 0 8px 0 rgb(0 0 0 / 3%), 0 8px 32px 0 rgb(16 33 60 / 24%); */
 }
 form {
-  margin: 2rem 1rem 1rem 1rem;
-  padding: 10px;
+  padding: 1rem 0;
 }

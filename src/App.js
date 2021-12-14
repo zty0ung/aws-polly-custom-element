@@ -52,7 +52,7 @@ function App(props) {
 
       <div className="url">
         <p className="u-spacing-l action-large p-white">URL</p>
-        <div className="content-item-element__content p-white">{s3Url}</div>
+        <div className="content-item-element__content p-grey">{s3Url}</div>
       </div>
 
       <form onSubmit={handleSubmit}>
