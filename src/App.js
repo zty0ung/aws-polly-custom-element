@@ -20,24 +20,28 @@ function App(props) {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(transcript);
-    axios
-      .post("https://aws-polly-backend.herokuapp.com/azure", {
-        transcript: transcript,
-        title: `${title}-${Date.now()}`,
-      })
-      .then((res) => {
-        console.log(res);
-        setS3Url(res.data.Location);
-        console.log(res.data.Location);
-        props.customElement.setValue(
-          JSON.stringify({
-            s3Url: res.data.Location,
-            transcript: transcript,
-          })
-        );
-      })
+    if (transcript.length > 0) {
+      axios
+        .post("https://aws-polly-backend.herokuapp.com/azure", {
+          transcript: transcript,
+          title: `${title}-${Date.now()}`,
+        })
+        .then((res) => {
+          console.log(res);
+          setS3Url(res.data.Location);
+          console.log(res.data.Location);
+          props.customElement.setValue(
+            JSON.stringify({
+              s3Url: res.data.Location,
+              transcript: transcript,
+            })
+          );
+        })
 
-      .catch((err) => console.log(err));
+        .catch((err) => console.log(err));
+    } else {
+      alert("Please enter a transcript");
+    }
   };
   return (
     <div className="App">
