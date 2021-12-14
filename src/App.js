@@ -65,7 +65,7 @@ function App(props) {
         />
         <input
           className="btn btn--primary"
-          disabled={transcript.length > 0 || props?.disabled ? false : true}
+          disabled={transcript.length <= 0 || props?.disabled ? true : false}
           type="submit"
           value="Convert"
         />
