@@ -38,14 +38,19 @@ function App(props) {
   };
   return (
     <div className="App">
-      <p class="u-spacing-l action-large">URL</p>
-      <div class="content-item-element__content">{s3Url}</div>
+      <p class="u-spacing-l action-large">URL: </p>
+      <div
+        class="content-item-element__content"
+        style={{ display: "inline-block" }}
+      >
+        {s3Url}
+      </div>
 
       {s3Url && <audio controls src={s3Url}></audio>}
       <form onSubmit={handleSubmit}>
         <p class="u-spacing-l action-large">Transcript</p>
         <textarea type="text" value={transcript} onChange={handleChange} />
-        <input type="submit" value="Submit" />
+        <input class="btn btn--tertiary" type="submit" value="Submit" />
       </form>
     </div>
   );
