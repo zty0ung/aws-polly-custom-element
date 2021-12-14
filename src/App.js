@@ -4,7 +4,7 @@ import axios from "axios";
 function App(props) {
   const [transcript, setTranscript] = useState("");
   const [s3Url, setS3Url] = useState(props?.data?.s3Url || null);
-  const [title, setTitle] = useState;
+  const [title, setTitle] = useState(null);
   useEffect(() => {
     props.customElement.getElementValue("title", (value) => {
       setTitle(value);
