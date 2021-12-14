@@ -1,12 +1,13 @@
 import "./App.css";
 import React, { useState, useEffect } from "react";
+import "./custom-element-v2.css";
 import axios from "axios";
 function App(props) {
   const [transcript, setTranscript] = useState("");
   const [s3Url, setS3Url] = useState(props?.data?.s3Url || null);
   const [title, setTitle] = useState(null);
   useEffect(() => {
-    props.customElement.getElementValue("title", (value) => {
+    props?.customElement?.getElementValue("title", (value) => {
       setTitle(value);
     });
   });
@@ -37,14 +38,13 @@ function App(props) {
   };
   return (
     <div className="App">
-      <label class="content-item-element__label">URL:</label>
+      <p class="u-spacing-l action-large">URL</p>
       <div class="content-item-element__content">{s3Url}</div>
+
       {s3Url && <audio controls src={s3Url}></audio>}
       <form onSubmit={handleSubmit}>
-        <label>
-          Transcript:
-          <textarea type="text" value={transcript} onChange={handleChange} />
-        </label>
+        <p class="u-spacing-l action-large">Transcript</p>
+        <textarea type="text" value={transcript} onChange={handleChange} />
         <input type="submit" value="Submit" />
       </form>
     </div>
