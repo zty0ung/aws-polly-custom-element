@@ -5,3 +5,6 @@ textarea {
   width: 100%;
   resize: none;
 }
+audio {
+  margin: 2rem 0;
+}
