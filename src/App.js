@@ -4,10 +4,7 @@ import "./custom-element-v2.css";
 import axios from "axios";
 function App(props) {
   const [transcript, setTranscript] = useState("");
-  const [s3Url, setS3Url] = useState(
-    props?.data?.s3Url ||
-      "https://kochnewsaudio.s3.amazonaws.com/Why%20clemency%20reform%20is%20next%20for%20criminal%20justice.mp3"
-  );
+  const [s3Url, setS3Url] = useState(props?.data?.s3Url || null);
   const [title, setTitle] = useState(null);
   useEffect(() => {
     props?.customElement?.getElementValue("title", (value) => {
@@ -45,16 +42,16 @@ function App(props) {
   };
   return (
     <div className="App">
+      <div className="preview">
+        <p className="u-spacing-l action-large">Preview</p>
+        <audio controls src={s3Url ? s3Url : null}></audio>
+      </div>
+
       <div className="url">
         <p className="u-spacing-l action-large">URL</p>
         <div className="content-item-element__content">{s3Url}</div>
       </div>
-      {s3Url && (
-        <div className="preview">
-          <p className="u-spacing-l action-large">Preview</p>{" "}
-          <audio controls src={s3Url}></audio>
-        </div>
-      )}
+
       <form onSubmit={handleSubmit}>
         <p className="u-spacing-l action-large">Transcript</p>
         <textarea type="text" value={transcript} onChange={handleChange} />
