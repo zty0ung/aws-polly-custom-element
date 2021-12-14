@@ -1,9 +1,14 @@
+* {
+  color: #525252;
+}
 input {
   display: block;
 }
 textarea {
   width: 100%;
   resize: none;
+  height: 275px;
+  border: 1px solid #dde0e4;
 }
 audio {
   margin: 2rem 0;
