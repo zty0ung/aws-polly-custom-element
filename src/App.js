@@ -4,7 +4,10 @@ import "./custom-element-v2.css";
 import axios from "axios";
 function App(props) {
   const [transcript, setTranscript] = useState("");
-  const [s3Url, setS3Url] = useState(props?.data?.s3Url || null);
+  const [s3Url, setS3Url] = useState(
+    props?.data?.s3Url ||
+      "https://kochnewsaudio.s3.amazonaws.com/Why%20clemency%20reform%20is%20next%20for%20criminal%20justice-1639507449675.mp3"
+  );
   const [title, setTitle] = useState(null);
   useEffect(() => {
     props?.customElement?.getElementValue("title", (value) => {
@@ -43,7 +46,7 @@ function App(props) {
   return (
     <div className="App">
       <div className="preview">
-        <p className="u-spacing-l action-large">Preview</p>
+        <p className="u-spacing-l action-large p-preview">Preview</p>
         <audio controls src={s3Url ? s3Url : null}></audio>
       </div>
 
